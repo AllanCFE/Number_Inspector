@@ -3,19 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ex01</title>
+    <title>Number Inspector</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Titulo</h1>
+        <h1>Number Inspector</h1>
     </header>
     <section>
         <div>
-            Teste up
+            Give us a number between 1 and 100:
+            <input type="number" name="fnum" id="fnum">
+            <input type="button" value="Add" onclick="add()">
+            <br><br><select name="flist" id="flist" size="6"></select>
+            <br><input type="button" value="Inspect" onclick="inspect()">
         </div>
-        <div>
-            Teste down
+        <div id="res">
+            
         </div>
     </section>
     <footer>

@@ -23,3 +23,7 @@ footer{
     font-size: 12px;
     font-weight: bold;
 }
+
+select#flist {
+    width: 50%;
+}
