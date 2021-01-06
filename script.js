@@ -21,9 +21,32 @@ function add(){
         let item = document.createElement('option');
         item.text = `Valor ${_num.value} adicionado`;
         _list.appendChild(item);
+        _res.innerHTML = '';
     } else {
         window.alert('Valor inválido ou já encontrado na lista!');
     }
     _num.value = ""
     _num.focus();
+}
+
+
+function inspect(){
+    if(_values.length == 0){
+        window.alert('No numbers found! You need to add at least one')
+    }
+    else{
+        _res.innerHTML = '';
+        _res.innerHTML = `<p>We have ${_values.length} numbers in the list</p>`
+        let _max = _values[0];
+        let _min = _values[0];
+        let _sum = 0;
+        for (let index = 0; index < _values.length; index++) {
+            if(_values[index] > _max) _max = _values[index];
+            if(_values[index] < _min) _min = _values[index];
+            _sum += _values[index];
+        }
+        _res.innerHTML += `<p>The largest number is ${_max} while the smallest number is ${_min}</p>`;
+        _res.innerHTML += `<p>The sum of the numbers is ${_sum}</p>`;
+        _res.innerHTML += `<p>The average of the numbers is ${Number(_sum/_values.length).toFixed(2)}</p>`;
+    }
 }
